@@ -31,6 +31,7 @@ function CodeMirrorWrapper({ code, setCode }: Props) {
 			highlightActiveLine: false,
 			lineNumbers: false,
 			syntaxHighlighting: true,
+			indentOnInput: true,
 		},
 	});
 

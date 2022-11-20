@@ -1,7 +1,7 @@
 import { useCodeMirror } from '@uiw/react-codemirror';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-
+import remarkGfm from 'remark-gfm';
 type Props = {
 	code: string;
 };
@@ -9,7 +9,11 @@ type Props = {
 function Preview({ code }: Props) {
 	return (
 		<div className='prose w-[50vw]'>
-			<ReactMarkdown className='prose' children={code} />
+			<ReactMarkdown
+				remarkPlugins={[remarkGfm]}
+				className='prose'
+				children={code}
+			/>
 		</div>
 	);
 }
